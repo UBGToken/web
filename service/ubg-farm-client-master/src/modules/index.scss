@@ -1,0 +1,104 @@
+@import "./form";
+@import "./notifier";
+@import "./table";
+
+// ============================ Input style ================================
+input {
+	font-size: 1em;
+	font-weight: 500;
+}
+// ============================ End Input style ============================
+
+// ============================ SPINNER STYLE ================================
+svg.spinner {
+	animation: spinnerRotate 2s linear infinite;
+	width: 20px;
+	height: 20px;
+
+	.path {
+		stroke: $grey;
+		stroke-linecap: round;
+		animation: spinnerDash 1.5s ease-in-out infinite;
+	}
+}
+
+@keyframes spinnerRotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes spinnerDash {
+	0% {
+		stroke-dasharray: 1, 150;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -35;
+	}
+	100% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -124;
+	}
+}
+// ============================ End SPINNER STYLE ============================
+
+// ============================ LOADING ELLIPSIS STYLE ================================
+.loadingEllipsis {
+	display: inline-block;
+	position: relative;
+	width: 30px;
+	height: 5px;
+}
+.loadingEllipsis div {
+	position: absolute;
+	// top: 15px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: $dark;
+	animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.loadingEllipsis div:nth-child(1) {
+	left: 3px;
+	animation: loadingEllipsis1 0.6s infinite;
+}
+.loadingEllipsis div:nth-child(2) {
+	left: 3px;
+	animation: loadingEllipsis2 0.6s infinite;
+}
+.loadingEllipsis div:nth-child(3) {
+	left: 13px;
+	animation: loadingEllipsis2 0.6s infinite;
+}
+.loadingEllipsis div:nth-child(4) {
+	left: 22px;
+	animation: loadingEllipsis3 0.6s infinite;
+}
+@keyframes loadingEllipsis1 {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes loadingEllipsis3 {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+@keyframes loadingEllipsis2 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(10px, 0);
+	}
+}
+
+// ============================ End LOADING ELLIPSIS STYLE ============================

@@ -1,0 +1,74 @@
+@import "../../../module.variables.scss";
+
+.Header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba($color: $white, $alpha: 0.8);
+  backdrop-filter: blur(10px);
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+
+    img.logo {
+      height: 40px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+      }
+
+      .item {
+        padding: 0 30px;
+        font-weight: 500;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+          color: $primary;
+        }
+
+        &.active {
+          color: $white;
+          background-color: $primary;
+          border-radius: 150px;
+          cursor: default;
+        }
+      }
+    }
+
+    .rightContent {
+      display: flex;
+
+      .UserAffiliateBox {
+        max-width: 250px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.Mobile {
+  .Header {
+    img.logo {
+      height: 30px;
+    }
+
+    .nav {
+      display: none;
+    }
+  }
+}

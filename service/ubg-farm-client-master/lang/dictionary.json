@@ -1,0 +1,58 @@
+{
+  "filter-box": {
+    "en_US": "Filter box",
+    "vi_VN": "",
+    "zh_CN": "",
+    "id_ID": "",
+    "ms_MY": ""
+  },
+  "filter-reset": {
+    "en_US": "Reset",
+    "vi_VN": "",
+    "zh_CN": "",
+    "id_ID": "",
+    "ms_MY": ""
+  },
+  "filter-submit": {
+    "en_US": "Apply",
+    "vi_VN": "",
+    "zh_CN": "",
+    "id_ID": "",
+    "ms_MY": ""
+  },
+  "fetching-data": {
+    "en_US": "Fetching data...",
+    "vi_VN": "",
+    "zh_CN": "",
+    "id_ID": "",
+    "ms_MY": ""
+  },
+  "error": {
+    "en_US": "Error",
+    "vi_VN": "",
+    "zh_CN": "",
+    "id_ID": "",
+    "ms_MY": ""
+  },
+  "no-data": {
+    "en_US": "No data",
+    "vi_VN": "",
+    "zh_CN": "",
+    "id_ID": "",
+    "ms_MY": ""
+  },
+  "total": {
+    "en_US": "Total",
+    "vi_VN": "",
+    "zh_CN": "",
+    "id_ID": "",
+    "ms_MY": ""
+  },
+  "loading-search-result": {
+    "en_US": "Fetching search result",
+    "vi_VN": "",
+    "zh_CN": "",
+    "id_ID": "",
+    "ms_MY": ""
+  }
+}
