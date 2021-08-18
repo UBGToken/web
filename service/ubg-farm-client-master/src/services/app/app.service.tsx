@@ -38,7 +38,7 @@ export class AppService {
 
   static renderPage = (configs: IRender = {}) => () => {
     const { type } = useSelector(state => state.app.device);
-    return <div className={ClassNames({ App: true, [type]: true })}>
+    return <div className={ClassNames({ App: true, [configs.className]: !!configs.className })}>
       {AppService.renderHead(configs.head)}
       {type === 'Mobile' ? <configs.mobile /> :
         type === 'Desktop' ? <configs.desktop /> :

@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 
-import { AppService, CookieService, ECookieVariable } from "./services";
-import { wrapper } from "./AppStores";
-import { Notifier } from "./modules/notifier";
+import { AppService, CookieService, ECookieVariable, SmcService } from "./services";
+import { useSelector, wrapper } from "./AppStores";
+import { Notifier } from "./modules";
+import { ModalWallet, ModalPoolDetail, ModalPoolDeposit } from "./modals";
+import { useStore } from "react-redux";
 
 const App = (props: any) => {
+  const store = useStore();
   const update = useState(Date.now());
   AppService.forceUpdateApp = () => update[1](Date.now());
   const { Component, pageProps } = props;
+  const device = useSelector(state => state.app.device);
+
+  useEffect(() => {
+    SmcService.initialize(store);
+  }, [])
 
   return <>
     <Head>
@@ -18,9 +26,17 @@ const App = (props: any) => {
 
       {/* --------- Include Styles --------- */}
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
+      <link rel="stylesheet" href="/styles/bootstrap-grid.min.css" />
     </Head>
-    <Notifier />
-    <Component {...pageProps} />
+
+    <div className={device.type}>
+      <Notifier />
+      <ModalWallet />
+      <ModalPoolDetail />
+      <ModalPoolDeposit />
+
+      <Component {...pageProps} />
+    </div>
   </>
 }
 
@@ -40,8 +56,10 @@ App.getInitialProps = async (props: any) => {
 
   return {
     pageProps: {
-      ...(Component.getInitialProps ? await
-        Component.getInitialProps(ctx) : {})
+      ...(Component.getInitialProps
+        ? await Component.getInitialProps(ctx)
+        : {}
+      )
     }
   }
 }

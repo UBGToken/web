@@ -1,5 +1,5 @@
 // ============================ Required Core style ================================
-$primary: #0290ff;
+$primary: #2744ec;
 $success: #69c62f;
 $info: #3a82ff;
 $warning: #ffaa00;
@@ -7,8 +7,8 @@ $danger: #ff303a;
 
 $white: #fff;
 $light: #f7f9fc;
-$dark: #151b2d;
-$grey: #87888c;
+$dark: #454545;
+$grey: #707070;
 
 $borderRadius: 5px;
 $borderColor: rgba(#8f9bb3, 0.3);
@@ -18,3 +18,12 @@ $zIndexNotifier: 500;
 // ============================ End Required Core style ============================
 
 $inputHeight: 38px;
+$boxShadow: 0px 3px 6px rgba($dark, 0.3);
+$zIndexModal: 200;
+
+@mixin flexBox($justifyContent: center, $alignItems: center, $direction: row) {
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+  flex-direction: $direction;
+}

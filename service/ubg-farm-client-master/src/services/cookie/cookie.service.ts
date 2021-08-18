@@ -4,7 +4,7 @@ import { getEnv } from '../../AppConfigs';
 export enum ECookieVariable {
   DEVICE_TYPE = 'device_type',
   // ======================= User related =======================
-  USER_ACCESS_TOKEN = 'usr_tk',
+  USER_WALLET_ADDRESS = 'usr_wallet',
   USER_AFFILIATE_CODE = 'usr_affiliate_code',
   USER_LOCALE = 'locale',
 }
@@ -30,7 +30,7 @@ export class CookieService {
 
   static set(name: ECookieVariable, value: string, options = {}) {
     const ONE_DAY = 86400;
-    const cookieOptions = { maxAge: ONE_DAY * 120, path: `/${getEnv('APP_NAME').toLowerCase()}`, ...options }
+    const cookieOptions = { maxAge: ONE_DAY * 120, path: `/`, ...options }
     return setCookie(this.context, name, value, cookieOptions);
   }
 

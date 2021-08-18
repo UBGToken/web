@@ -2,9 +2,10 @@ import { FC, memo, useState } from 'react'
 
 import { TableFilterProps } from './types'
 import { isEqual } from '../utils'
-import { Button } from '../../components/button'
 import { Icon } from '../icon'
 import moduleConfig from '../../module.config'
+import { TableButton } from './TableButton'
+// import { Button } from 'components'
 
 interface Props extends TableFilterProps {
   onSubmit: (params: any) => any
@@ -94,7 +95,7 @@ export const TableFilter: FC<Props> = memo((props) => {
 
               {qtyFilterActive ? <div className="item reset">
                 <div className="label">Action</div>
-                <Button label="Reset" buttonType="grey-outline" onClick={handleReset} />
+                <TableButton label={moduleConfig.translate('filter-reset')} onClick={handleReset} />
               </div> : null}
             </div> : null}
           </div>
@@ -125,8 +126,8 @@ export const TableFilter: FC<Props> = memo((props) => {
                 })}
               </div>
               <div className="btnActions">
-                <Button isVisible={!!qtyFilterActive} label={moduleConfig.translate('filter-reset')} buttonType="grey-outline" onClick={handleReset} />
-                <Button label={moduleConfig.translate('filter-submit')} onClick={handleSubmit} />
+                <TableButton label={moduleConfig.translate('filter-reset')} onClick={handleReset} isVisible={!!qtyFilterActive} className="negative" />
+                <TableButton label={moduleConfig.translate('filter-submit')} onClick={handleSubmit} />
               </div>
             </div>
           </div> : null}

@@ -31,7 +31,7 @@ export const InputWraper: FC<InputWraperProps> = ({ inputProps, component: Compo
       [className as string]: !!className
     })}>
       <label htmlFor={fieldName}>
-        {label} {!isRequired && <span className="tagOptional">- {moduleConfig.translate('optional')}</span>}
+        {label} {!isRequired && !isDisabled && <span className="tagOptional">- {moduleConfig.translate('optional')}</span>}
       </label>
       <br />
 

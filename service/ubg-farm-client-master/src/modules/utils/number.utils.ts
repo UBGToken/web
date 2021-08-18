@@ -34,6 +34,14 @@ export class NumberUtils {
     return output.replace('.', '');
   }
 
+  static cryptoConvert(type: 'encode' | 'decode', amount: number, decimals: number) {
+    if (type === 'decode') return (amount) / +("1" + new Array(decimals).fill(0).toString().replace(/,/g, ''));
+    const scale = decimals - (amount.toString().split('.')[1]?.length || 0);
+    let output = amount.toString();
+    for (let i = 0; i < scale; i++) output += '0';
+    return output.replace('.', '');
+  }
+
   static formatBytes(bytes: number, decimals = 2) {
     if (bytes === 0) return '0 Bytes';
 

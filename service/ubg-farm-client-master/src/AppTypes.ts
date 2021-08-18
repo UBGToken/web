@@ -35,7 +35,14 @@ export interface IHead {
 
 export interface IRender {
   head?: IHead,
+  className?: string,
   mobile?: FC<any>,
   desktop?: FC<any>,
   tablet?: FC<any>,
+}
+
+export interface ResponseState<T> {
+  data: T | null,
+  error?: string,
+  isFetched: boolean,
 }

@@ -1,0 +1,40 @@
+@import "../../../module.variables.scss";
+
+footer.Footer {
+  background: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  flex-direction: column;
+
+  .logo {
+    margin-bottom: 15px;
+
+    img {
+      height: 40px;
+    }
+  }
+
+  .social {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin: 0 15px;
+      opacity: 0.7;
+
+      svg {
+        height: 38px;
+
+        * {
+          fill: $white;
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

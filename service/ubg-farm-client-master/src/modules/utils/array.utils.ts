@@ -20,4 +20,10 @@ export class ArrayUtils {
     }
     return -1;
   }
+
+  static findMaxValue(array: any[], fieldName: string) {
+    return Math.max.apply(Math, array.map(function (o) {
+      return o[fieldName];
+    }));
+  }
 }
