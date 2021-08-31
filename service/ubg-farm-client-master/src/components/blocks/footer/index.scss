@@ -22,7 +22,19 @@ footer.Footer {
 
     a {
       margin: 0 15px;
-      opacity: 0.7;
+      opacity: 0.8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: $white;
+      text-decoration: none;
+      width: 150px;
+
+      span.label {
+        margin-top: 0.3rem;
+        font-size: 0.8rem;
+      }
 
       svg {
         height: 38px;

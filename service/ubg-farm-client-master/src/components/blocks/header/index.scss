@@ -6,8 +6,8 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  background: rgba($color: $white, $alpha: 0.8);
   backdrop-filter: blur(10px);
+  background: $primary;
 
   .content {
     display: flex;
@@ -36,14 +36,15 @@
         justify-content: center;
         cursor: pointer;
         text-decoration: none;
+        color: rgba($color: $white, $alpha: 0.8);
 
         &:hover {
-          color: $primary;
+          color: $white;
         }
 
         &.active {
-          color: $white;
-          background-color: $primary;
+          color: $primary;
+          background-color: $white;
           border-radius: 150px;
           cursor: default;
         }
@@ -56,6 +57,29 @@
       .UserAffiliateBox {
         max-width: 250px;
         margin-right: 5px;
+        border-color: rgba($color: $white, $alpha: 0.5);
+
+        span.icon {
+          svg {
+            * {
+              fill: $white;
+            }
+          }
+        }
+
+        span.btnCopy {
+          svg {
+            * {
+              fill: $white;
+            }
+          }
+        }
+
+        span {
+          &.value {
+            color: $white;
+          }
+        }
       }
     }
   }

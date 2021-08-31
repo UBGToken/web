@@ -16,7 +16,7 @@ export const SectionBank: FC = () => {
     <Element name="SectionBank" className="Section SectionBank">
       <div className="container">
         <div className="sectionTitle">Staking</div>
-        <div className="sectionExcerpt">Dolore lobortis animi exercitation ipsa etiam</div>
+        {/* <div className="sectionExcerpt">Dolore lobortis animi exercitation ipsa etiam</div> */}
 
         {/* <div className="numberReports mb25">
           <div className="row">
@@ -86,7 +86,7 @@ const Form: FC = () => {
         exProps: {
           options: packages ? packages.map(v => ({ label: v.name, value: v.id })) : [],
         },
-        defaultValue: "0",
+        defaultValue: packages ? packages[0].id : '',
       }
     },
     onSubmit: async ({ values }) => {

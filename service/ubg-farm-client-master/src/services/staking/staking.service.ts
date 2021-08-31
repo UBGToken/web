@@ -11,7 +11,7 @@ export class StakingService {
   }
 
   static async fetchPackages(): Promise<StakePackage[]> {
-    return Promise.all(["1 month", "3 months", "6 months", "12 months"].map(async (name, index) => {
+    const packages = await Promise.all(["1 month", "3 months", "6 months", "12 months"].map(async (name, index) => {
       const packageRes = await SmcService.call({
         contract: SmcService.contractStaking,
         method: 'packages'
@@ -26,6 +26,8 @@ export class StakingService {
 
       return data
     }))
+
+    return packages.filter(v => !["1 month"].includes(v.name));
   }
 }
 

@@ -20,7 +20,7 @@ export const Header: FC<Props> = (props) => {
         <div className="content">
           <NextLink href="/" >
             <a>
-              <img src="/images/logo.png" alt="" className="logo" />
+              <img src="/images/logo-white.png" alt="" className="logo" />
             </a>
           </NextLink>
 
@@ -35,6 +35,10 @@ export const Header: FC<Props> = (props) => {
                 IDO & Airdrop
               </a>
             </NextLink> */}
+
+            <a href="https://ubgtoken.com/" className="item">
+              Home
+            </a>
 
 
             {/* <div className="item"> */}
