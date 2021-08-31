@@ -27,14 +27,14 @@ export const Header: FC<Props> = (props) => {
           {props.isIDOPage ? <>
           </> : <div className="nav">
             <Link to="SectionHead" activeClass="active" className="item" offset={-100} spy={true} smooth={true} duration={500}>INTRODUCE</Link>
-            <Link to="SectionFarming" activeClass="active" className="item" offset={-50} spy={true} smooth={true} duration={500}>FARMING</Link>
-            <Link to="SectionBank" activeClass="active" className="item" offset={-50} spy={true} smooth={true} duration={500}>BANK</Link>
+            {/* <Link to="SectionFarming" activeClass="active" className="item" offset={-50} spy={true} smooth={true} duration={500}>FARMING</Link> */}
+            <Link to="SectionBank" activeClass="active" className="item" offset={-50} spy={true} smooth={true} duration={500}>Staking</Link>
 
-            <NextLink href="/ido">
+            {/* <NextLink href="/ido">
               <a className="item">
                 IDO & Airdrop
               </a>
-            </NextLink>
+            </NextLink> */}
 
 
             {/* <div className="item"> */}
